@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Kaumatua Dance Game</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <h1>Kaumatua Dance Game</h1>
+
+  <div id="gameContainer">
+    <!-- LEFT SIDE: Follow This Dancer (now wrapped in .video-wrapper) -->
+    <div class="video-container">
+      <h2>Follow This Dancer</h2>
+      <div class="video-wrapper">
+        <video
+          id="dancerVideo"
+          width="480"
+          height="360"
+          controls
+          src="Sample_Dance.mp4"
+          crossorigin="anonymous"
+        >
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+
+    <!-- RIGHT SIDE: Your Webcam (already wrapped in .video-wrapper) -->
+    <div class="video-container">
+      <h2>Your Webcam</h2>
+      <div class="video-wrapper">
+        <video
+          id="webcamVideo"
+          width="480"
+          height="360"
+          autoplay
+          playsinline
+        ></video>
+        <canvas
+          id="overlayCanvas"
+          width="480"
+          height="360"
+        ></canvas>
+      </div>
+    </div>
+  </div>
+
+  <div id="scoreContainer">
+    <h2>Score: <span id="scoreValue">0</span></h2>
+  </div>
+
+  <button id="startButton">Start Game</button>
+  <script type="module" src="script.js"></script>
+</body>
+</html>
